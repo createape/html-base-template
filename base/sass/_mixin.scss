@@ -1,0 +1,12 @@
+@mixin translate ($x, $y) {
+   @include transform(translate($x, $y));
+}
+
+@mixin rotate ($deg) {
+  @include transform(rotate(#{$deg}deg));
+}
+
+@mixin font-size($sizeValue: 16 ){
+   font-size: $sizeValue + px; //fallback for old browsers
+   font-size: (0.0625 * $sizeValue) + rem;
+ }
