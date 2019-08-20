@@ -108,9 +108,7 @@ function browserReload(cb) {
 }
 
 function browserReloadPages(cb) {
-  browserSync.reload({
-    stream: true
-  })
+  browserSync.reload()
   cb();
 }
 
@@ -126,6 +124,7 @@ function watchAll (){
   watch('./base/js/*.js', series(javaScript,browserReloadPages));
   watch('./base/script/**/*.*', series(copyJavaScripts,browserReloadPages));
   watch('./base/content/*', series(copyContent,browserReloadPages)); 
+  // watch('./dist/*', browserReloadPages);
  
 }
 
